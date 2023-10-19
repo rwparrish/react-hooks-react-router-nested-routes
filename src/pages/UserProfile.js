@@ -1,8 +1,10 @@
-import users from "../data.js";
 import { useParams } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 function UserProfile() {
   const params = useParams();
+
+  const users = useOutletContext();
 
   const user = users.find(user => user.id === parseInt(params.id));
 
